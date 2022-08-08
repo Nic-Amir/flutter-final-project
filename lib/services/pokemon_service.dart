@@ -23,7 +23,6 @@ class PokemonService {
       scheme: 'https',
       host: 'https://pokeapi.co/',
       path: 'api/v2/pokemon/',
-
     );
 
     http.Response response = await http.get(pokeUrl);

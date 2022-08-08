@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
-import 'package:flutter_project_pokemon_codex/states/pokemon_states.dart';
-import 'package:flutter_project_pokemon_codex/widgets/pokemon_info.dart';
 
 class PokemonDetails extends StatelessWidget {
-  const PokemonDetails({required this.pokeId, Key? key}) : super(key: key);
-   final String pokeId;
+  const PokemonDetails({Key? key}) : super(key: key);
 
   void navigateHome(BuildContext context) {
     Navigator.of(context).pushNamed('/MyHomePage');
@@ -14,7 +9,6 @@ class PokemonDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    IdPokemonCubit cubit = BlocProvider.of<IdPokemonCubit>(context)..fetchPokemonById(pokeId);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -30,21 +24,34 @@ class PokemonDetails extends StatelessWidget {
       ),
       extendBodyBehindAppBar: true,
 
-      body: Center(
-        child: BlocBuilder<IdPokemonCubit, PokemonState>(
-            bloc: cubit,
-            builder: (context, state) {
-              if (state is PokemonLoading){
-                return const CircularProgressIndicator();
-              }
-              if (state is PokemonLoaded){
-                return PokemonInformation(pokemonModel: state.pokemonModel);
-              }
-              return Text(
-                  state is PokemonError ?
-                  state.errorMsg: 'Unknown error');
-            }
-        ),
+      body: Column(
+        children: [
+          Container(
+            //img container
+            height: 200,
+          ),
+          Column(
+            children: [
+              Text('Pokemon name'),
+              SizedBox(
+                height: 20,
+              ),
+              Text('height'),
+              SizedBox(
+                height: 20,
+              ),
+              Text('weight'),
+              SizedBox(
+                height: 20,
+              ),
+              Text('Types'),
+              SizedBox(
+                height: 20,
+              ),
+
+            ],
+          )
+        ],
       ),
     );
   }
