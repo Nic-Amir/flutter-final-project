@@ -4,16 +4,35 @@ import 'package:flutter_project_pokemon_codex/states/pokemon_states.dart';
 
 import '../models/pokemon_model.dart';
 
-class PokemonCubit extends Cubit<PokemonState> {
-  PokemonCubit() : super(PokemonLoading());
+class IdPokemonCubit extends Cubit<PokemonState> {
+  IdPokemonCubit() : super(PokemonLoading());
 
-  Future<void> fetchPokemon(String pokeId) async {
+  Future<void> fetchPokemonById(String pokeId) async {
     PokemonService pokemonService = PokemonService();
 
     emit(PokemonLoading());
 
     try {
-      PokemonModel pokemonModel = await pokemonService.fetchPokeInfo(pokeId);
+      PokemonModel pokemonModel =
+          await pokemonService.fetchPokeInfoById(pokeId);
+
+      emit(PokemonLoaded(pokemonModel: pokemonModel));
+    } catch (e) {
+      emit(PokemonError(errorMsg: e.toString()));
+    }
+  }
+}
+
+class AllPokemonCubit extends Cubit<PokemonState> {
+  AllPokemonCubit() : super(PokemonLoading());
+
+  Future<void> fetchPokemons() async {
+    PokemonService pokemonService = PokemonService();
+
+    emit(PokemonLoading());
+
+    try {
+      PokemonModel pokemonModel = await pokemonService.fetchPokeInfo();
 
       emit(PokemonLoaded(pokemonModel: pokemonModel));
     } catch (e) {

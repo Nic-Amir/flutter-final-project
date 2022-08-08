@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_pokemon_codex/pages/home_page.dart';
-import 'package:flutter_project_pokemon_codex/pages/pokemon_detail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.cyan,
       ),
-      home: const PokemonDetails(),
+      home: const MyHomePage(),
     );
   }
 }
