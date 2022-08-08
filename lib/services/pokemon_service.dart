@@ -5,7 +5,7 @@ class PokemonService {
   Future<PokemonModel> fetchPokeInfoById(String pokeId) async {
     final Uri pokeUrl = Uri(
       scheme: 'https',
-      host: 'https://pokeapi.co/',
+      host: 'pokeapi.co',
       path: 'api/v2/pokemon/$pokeId',
     );
 
