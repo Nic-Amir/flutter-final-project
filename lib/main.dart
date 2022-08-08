@@ -5,6 +5,7 @@ import 'package:flutter_project_pokemon_codex/pages/pokemon_detail.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 
 void main() {
+  runApp(const MyApp());
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => IdPokemonCubit()),
   ], child: const MyApp()));
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primarySwatch: Colors.cyan,
       ),
-      home: const PokemonDetails(),
+      home: PokemonDetails(pokeId: 'pikachu'),
     );
   }
 }

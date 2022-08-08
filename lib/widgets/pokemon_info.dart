@@ -1,11 +1,37 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
 
-class PokemonInfomation extends StatelessWidget {
-  const PokemonInfomation({Key? key}) : super(key: key);
+class PokemonInformation extends StatelessWidget {
+  const PokemonInformation({required this.pokemonModel, Key? key})
+      : super(key: key);
+
+  final PokemonModel pokemonModel;
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Card(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('${pokemonModel.name}'),
+          SizedBox(
+            height: 20,
+          ),
+          Text('${pokemonModel.height}'),
+          SizedBox(
+            height: 20,
+          ),
+          Text('${pokemonModel.weight}'),
+          Text('here is the weight'),
+          SizedBox(
+            height: 20,
+          ),
+          Text('Types'),
+          SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
+    );
   }
 }
