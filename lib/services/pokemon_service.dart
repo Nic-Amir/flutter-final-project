@@ -4,9 +4,9 @@ import 'package:http/http.dart' as http;
 class PokemonService {
   Future<PokemonModel> fetchPokeInfoById(String pokeId) async {
     final Uri pokeUrl = Uri(
-      scheme: 'https',
-      host: 'pokeapi.co',
-      path: 'api/v2/pokemon/$pokeId',
+        scheme: 'https',
+        host: 'pokeapi.co',
+        path: 'api/v2/pokemon/$pokeId',
     );
 
     http.Response response = await http.get(pokeUrl);
@@ -17,4 +17,5 @@ class PokemonService {
       throw Exception('error error error please try again');
     }
   }
+
 }
