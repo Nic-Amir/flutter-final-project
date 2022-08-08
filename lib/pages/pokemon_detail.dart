@@ -23,7 +23,6 @@ class PokemonDetails extends StatelessWidget {
             }),
       ),
       extendBodyBehindAppBar: true,
-
       body: Column(
         children: [
           Container(
@@ -48,7 +47,6 @@ class PokemonDetails extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
             ],
           )
         ],

@@ -6,8 +6,7 @@ import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 
 void main() {
   runApp(MultiBlocProvider(providers: [
-    BlocProvider(create: (BuildContext context) => IdPokemonCubit()),
-    BlocProvider(create: (BuildContext context) => AllPokemonCubit())
+    BlocProvider(create: (context) => IdPokemonCubit()),
   ], child: const MyApp()));
 }
 

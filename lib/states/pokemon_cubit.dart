@@ -22,21 +22,3 @@ class IdPokemonCubit extends Cubit<PokemonState> {
     }
   }
 }
-
-class AllPokemonCubit extends Cubit<PokemonState> {
-  AllPokemonCubit() : super(PokemonLoading());
-
-  Future<void> fetchPokemons() async {
-    PokemonService pokemonService = PokemonService();
-
-    emit(PokemonLoading());
-
-    try {
-      PokemonModel pokemonModel = await pokemonService.fetchPokeInfo();
-
-      emit(PokemonLoaded(pokemonModel: pokemonModel));
-    } catch (e) {
-      emit(PokemonError(errorMsg: e.toString()));
-    }
-  }
-}
