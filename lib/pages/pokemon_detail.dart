@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PokemonDetails extends StatelessWidget {
-  const PokemonDetails({Key? key}) : super(key: key);
+  const PokemonDetails({Key? key, required String pokeId}) : super(key: key);
 
   void navigateHome(BuildContext context) {
     Navigator.of(context).pushNamed('/MyHomePage');
