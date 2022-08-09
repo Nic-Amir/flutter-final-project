@@ -21,16 +21,7 @@ class PokemonDetails extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          leading: GestureDetector(
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                color: Colors.black,
-              ),
-              onTap: () {
-                Navigator.pop(context);
-              }),
+          title: Text('Poke Details'),
         ),
         extendBodyBehindAppBar: true,
         body: Center(
