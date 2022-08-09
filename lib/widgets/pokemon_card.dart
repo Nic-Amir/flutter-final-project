@@ -22,7 +22,11 @@ class PokemonCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index+1}.gif',
+<<<<<<< HEAD
                   height: 20,),
+=======
+                height: 20,),
+>>>>>>> origin/master
                 SizedBox(
                   width: 5,
                 ),
@@ -34,4 +38,8 @@ class PokemonCard extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
