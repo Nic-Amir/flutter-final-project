@@ -17,5 +17,4 @@ class PokemonService {
       throw Exception('error error error please try again');
     }
   }
-
 }
