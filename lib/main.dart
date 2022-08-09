@@ -26,7 +26,12 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.cyan,
       ),
-      home: PokemonList(),
+      home: MyHomePage(),
+      routes: {
+        '/poke-details': (context) => PokemonDetailsParam(),
+        '/poke-list': (context) => PokemonList(),
+
+      },
     );
   }
 }

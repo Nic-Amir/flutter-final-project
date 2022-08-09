@@ -14,24 +14,26 @@ class PokemonInformation extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.network(
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png'),
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png',
+          height: 200,),
+          Text('${pokemonModel.id}'),
           Text('${pokemonModel.name}'),
           SizedBox(
             height: 20,
           ),
-          Text('${pokemonModel.height}'),
-          SizedBox(
-            height: 20,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+
+              Text('HEIGHT: ${pokemonModel.height}m'),
+              Text('WEIGHT: ${pokemonModel.weight}kg '),
+              Text('TYPE:'),
+              Text('${pokemonModel.types.first.type.name}'),
+            ],
           ),
-          Text('${pokemonModel.weight}'),
-          Text('here is the weight'),
-          SizedBox(
-            height: 20,
-          ),
-          Text('Types'),
-          SizedBox(
-            height: 20,
-          ),
+          Container(
+            child: Text('Abilities: ${pokemonModel.abilities.first.ability}'),
+          )
         ],
       ),
     );

@@ -14,6 +14,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Pokedex'),
       ),
+
+      body: Center(
+        child : Column(
+          children: [
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed('/poke-list');
+                },
+                child: Text('Pokedex')),
+          ],
+        ),
+      ),
     );
   }
 }
