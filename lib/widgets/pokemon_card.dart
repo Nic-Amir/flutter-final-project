@@ -13,7 +13,7 @@ class PokemonCard extends StatelessWidget {
       child: GridTile(
         child: GestureDetector(
           onTap: (){
-            Navigator.of(context).pushNamed('/poke-details',arguments: index);
+            Navigator.of(context).pushNamed('/poke-details',arguments: (index+1).toString());
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
