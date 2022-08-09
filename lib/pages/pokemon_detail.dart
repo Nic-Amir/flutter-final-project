@@ -10,8 +10,8 @@ class PokemonDetails extends StatelessWidget {
 
   final String pokeId;
 
-  void navigateHome(BuildContext context) {
-    Navigator.of(context).pushNamed('/MyHomePage');
+  void navigatePokeDex(BuildContext context) {
+    Navigator.of(context).pushNamed('/poke-list');
   }
 
   @override
@@ -28,7 +28,7 @@ class PokemonDetails extends StatelessWidget {
               color: Colors.black,
             ),
             onTap: () {
-              navigateHome(context);
+              navigatePokeDex(context);
             }),
       ),
       extendBodyBehindAppBar: true,

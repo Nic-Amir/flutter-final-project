@@ -28,11 +28,11 @@ class PokemonInformation extends StatelessWidget {
               Text('HEIGHT: ${pokemonModel.height}m'),
               Text('WEIGHT: ${pokemonModel.weight}kg '),
               Text('TYPE:'),
-              Text('${pokemonModel.types.first.type.name}')
+              Text('${pokemonModel.types.first.type.name}'),
             ],
           ),
           Container(
-            child: Text('Abilities: ${pokemonModel.abilities.}'),
+            child: Text('Abilities: ${pokemonModel.abilities.first.ability}'),
           )
         ],
       ),
