@@ -32,12 +32,24 @@ class PokemonList extends StatelessWidget {
                     return Card(
                       child: GridTile(
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Image.network(
                               'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png',
-                              height: 100,
+                              height: 70,
                             ),
-                            Text('${state.pokemonsModel.results[index].name}'),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index + 1}.gif',
+                                  height: 20,
+                                ),
+                                Padding(padding: EdgeInsets.only(right: 5)),
+                                Text(
+                                    '${state.pokemonsModel.results[index].name}'),
+                              ],
+                            ),
                           ],
                         ),
                       ),
