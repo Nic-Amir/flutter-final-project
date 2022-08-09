@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.cyan,
       ),
-      home: MyHomePage(),
+      home: PokemonList(),
     );
   }
 }
