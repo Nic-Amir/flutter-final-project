@@ -11,25 +11,30 @@ class PokemonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: GridTile(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.network(
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index+1}.png',
-              height: 80,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index+1}.gif',
-                height: 20,),
-                SizedBox(
-                  width: 5,
-                ),
-                Text('${pokemonsModel.results[index].name}'),
-              ],
-            ),
-          ],
+        child: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pushNamed('/poke-details',arguments: index);
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.network(
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index+1}.png',
+                height: 80,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index+1}.gif',
+                  height: 20,),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text('${pokemonsModel.results[index].name}'),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -584,3 +584,4 @@ class Type {
         type: Species.fromMap(json["type"]),
       );
 }
+
