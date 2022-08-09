@@ -26,6 +26,10 @@ class PokemonsService {
       scheme: 'https',
       host: 'pokeapi.co',
       path: 'api/v2/pokemon/',
+      queryParameters: {
+        'limit': '2000',
+        'offset': '0',
+      },
     );
 
     http.Response response = await http.get(pokeUrl);
