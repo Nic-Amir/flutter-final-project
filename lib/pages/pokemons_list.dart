@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemons_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemons_states.dart';
+import 'package:flutter_project_pokemon_codex/widgets/pokemon_card.dart';
 
 class PokemonList extends StatelessWidget {
   const PokemonList({Key? key}) : super(key: key);
@@ -29,31 +30,7 @@ class PokemonList extends StatelessWidget {
                       crossAxisCount: 3),
                   itemCount: state.pokemonsModel.count,
                   itemBuilder: ((context, index) {
-                    return Card(
-                      child: GridTile(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.network(
-                              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png',
-                              height: 70,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.network(
-                                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index + 1}.gif',
-                                  height: 20,
-                                ),
-                                Padding(padding: EdgeInsets.only(right: 5)),
-                                Text(
-                                    '${state.pokemonsModel.results[index].name}'),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
+                    return PokemonCard(pokemonsModel: state.pokemonsModel, index: index,);
                   }));
             }
             return Text(
