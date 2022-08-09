@@ -35,7 +35,10 @@ class PokemonCard extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text('${pokemonsModel.results[index].name}'),
+                  Text(
+                    '${pokemonsModel.results[index].name}',
+                    style: TextStyle(fontSize: 17),
+                  ),
                 ],
               ),
             ],
