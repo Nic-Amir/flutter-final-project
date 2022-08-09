@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/pages/home_page.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail.dart';
+import 'package:flutter_project_pokemon_codex/pages/pokemon_detail_param.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemons_cubit.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemons_list.dart';

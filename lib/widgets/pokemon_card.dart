@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/pokemons_model.dart';
 
 class PokemonCard extends StatelessWidget {
-  const PokemonCard(
-      {required this.index, required this.pokemonsModel, Key? key})
-      : super(key: key);
+  const PokemonCard({required this.index,required this.pokemonsModel,Key? key}) : super(key: key);
   final PokemonsModel pokemonsModel;
   final int index;
 
@@ -44,5 +42,4 @@ class PokemonCard extends StatelessWidget {
       ),
     );
   }
-
 }
