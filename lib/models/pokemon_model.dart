@@ -149,3 +149,4 @@ class Stat {
         stat: Form.fromMap(json["stat"]),
       );
 }
+
