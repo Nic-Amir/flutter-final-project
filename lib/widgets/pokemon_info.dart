@@ -13,6 +13,8 @@ class PokemonInformation extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image.network(
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png'),
           Text('${pokemonModel.name}'),
           SizedBox(
             height: 20,

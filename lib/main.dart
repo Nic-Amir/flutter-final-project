@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.cyan,
       ),
-      home: PokemonDetails(pokeId: 'pikachu'),
+      home: PokemonDetails(
+        pokeId: 'rayquaza',
+      ),
     );
   }
 }
