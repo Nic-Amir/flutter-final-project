@@ -11,7 +11,7 @@ class PokemonsModel {
   final int count;
   final dynamic next;
   final dynamic previous;
-  final List<Result> results;
+  final List<PokeResult> results;
 
   factory PokemonsModel.fromJson(String str) =>
       PokemonsModel.fromMap(json.decode(str));
@@ -20,13 +20,13 @@ class PokemonsModel {
         count: json["count"],
         next: json["next"],
         previous: json["previous"],
-        results:
-            List<Result>.from(json["results"].map((x) => Result.fromMap(x))),
+        results: List<PokeResult>.from(
+            json["results"].map((x) => PokeResult.fromMap(x))),
       );
 }
 
-class Result {
-  Result({
+class PokeResult {
+  PokeResult({
     required this.name,
     required this.url,
   });
@@ -34,9 +34,10 @@ class Result {
   final String name;
   final String url;
 
-  factory Result.fromJson(String str) => Result.fromMap(json.decode(str));
+  factory PokeResult.fromJson(String str) =>
+      PokeResult.fromMap(json.decode(str));
 
-  factory Result.fromMap(Map<String, dynamic> json) => Result(
+  factory PokeResult.fromMap(Map<String, dynamic> json) => PokeResult(
         name: json["name"],
         url: json["url"],
       );
