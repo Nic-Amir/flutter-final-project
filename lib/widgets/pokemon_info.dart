@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
+import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_stats_list.dart';
+
+// import '../models/pokemon/stats.dart';
 
 class PokemonInformation extends StatelessWidget {
   const PokemonInformation({required this.pokemonModel, Key? key})
       : super(key: key);
 
   final PokemonModel pokemonModel;
+  // late Future<List<Stat>> stats;
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +59,9 @@ class PokemonInformation extends StatelessWidget {
           ),
           Column(
             children: [
-              Text('Stats'),
-              Text('${pokemonModel.stats.first.stat.name}')
+              StatList(pokemonModel: pokemonModel),
             ],
-          )
+          ),
         ],
       ),
     );
