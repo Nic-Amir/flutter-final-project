@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_project_pokemon_codex/models/items_model.dart';
 
@@ -13,14 +13,14 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: GridTile(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.network(
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemsModel.results[index].name}.png'),
-          Text('${itemsModel.results[index].name}'),
-        ],
-      ),
-    ));
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.network(
+                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemsModel.results[index].name}.png', scale: 0.5,),
+              Text('${itemsModel.results[index].name}'),
+            ],
+          ),
+        ));
   }
 }

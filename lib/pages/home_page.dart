@@ -23,6 +23,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.of(context).pushNamed('/poke-list');
                 },
                 child: Text('Pokedex')),
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed('/item-list');
+                },
+                child: Text('Items'))
           ],
         ),
       ),

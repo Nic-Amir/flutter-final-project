@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/states/items_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/items_state.dart';
-import 'package:flutter_project_pokemon_codex/widgets/item_card.dart';
+import 'package:flutter_project_pokemon_codex/widgets/pokemon_item.dart';
 
 class ItemList extends StatelessWidget {
   const ItemList({Key? key}) : super(key: key);
