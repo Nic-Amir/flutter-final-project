@@ -32,7 +32,7 @@ class ItemDetails extends StatelessWidget {
                   return Center(child: const CircularProgressIndicator());
                 }
                 if (state is ItemLoaded) {
-                  return ItemInfo(itemModel: state. itemModel);
+                  return ItemInfo(itemModel: state.itemModel);
                 }
                 return Text(
                     state is ItemError ? state.errorMsg : 'Unknown error');
@@ -40,4 +40,3 @@ class ItemDetails extends StatelessWidget {
         ));
   }
 }
-

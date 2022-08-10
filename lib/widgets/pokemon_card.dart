@@ -6,14 +6,13 @@ import 'package:flutter_project_pokemon_codex/states/pokemon_states.dart';
 import '../models/pokemons_model.dart';
 
 class PokemonCard extends StatelessWidget {
-  const PokemonCard(
-      { required this.pokemonsModel, Key? key})
-      : super(key: key);
-  final PokemonsModel pokemonsModel;
-
+  const PokemonCard({required this.pokemonsModel, Key? key}) : super(key: key);
+  final PokeResult pokemonsModel;
 
   @override
   Widget build(BuildContext context) {
+    final rgx = RegExp(r'/([\d]+)[/]{0,1}$');
+    final String id = rgx.firstMatch(pokemonsModel.url)?.group(1) ?? "1";
     return Card(
       // color: state.pokemonModel.types.first.type.name == "grass"
       //     ? Colors.greenAccent
@@ -65,28 +64,27 @@ class PokemonCard extends StatelessWidget {
       child: GridTile(
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context)
-                .pushNamed('/poke-details', arguments: (index + 1).toString());
+            Navigator.of(context).pushNamed('/poke-details', arguments: id);
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.network(
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png',
-                scale: 6,
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png',
+                height: 80,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.network(
-                    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${index + 1}.gif',
+                    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/$id.gif',
                     height: 20,
                   ),
                   SizedBox(
                     width: 5,
                   ),
                   Text(
-                    '${pokemonsModel.results[index].name}',
+                    '${pokemonsModel.name}',
                     style: TextStyle(fontSize: 17),
                   ),
                 ],
