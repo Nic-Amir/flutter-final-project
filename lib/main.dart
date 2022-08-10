@@ -3,15 +3,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/pages/home_page.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail_param.dart';
+import 'package:flutter_project_pokemon_codex/states/items_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemons_cubit.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemons_list.dart';
+
+import 'pages/pokemon_item_list.dart';
 
 void main() {
   runApp(const MyApp());
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => IdPokemonCubit()),
     BlocProvider(create: (context) => PokemonsCubit()),
+    BlocProvider(create: (context) => ItemsCubit()),
   ], child: const MyApp()));
 }
 
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/poke-details': (context) => PokemonDetailsParam(),
         '/poke-list': (context) => PokemonList(),
-
+        '/item-list': (context)=> ItemList(),
       },
     );
   }

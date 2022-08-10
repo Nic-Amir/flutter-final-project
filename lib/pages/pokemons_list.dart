@@ -22,7 +22,7 @@ class PokemonList extends StatelessWidget {
           bloc: cubit,
           builder: ((context, state) {
             if (state is PokemonsLoading) {
-              return const CircularProgressIndicator();
+              return Center(child: const CircularProgressIndicator());
             }
             if (state is PokemonsLoaded) {
               return GridView.builder(
@@ -30,7 +30,10 @@ class PokemonList extends StatelessWidget {
                       crossAxisCount: 3),
                   itemCount: state.pokemonsModel.count,
                   itemBuilder: ((context, index) {
-                    return PokemonCard(pokemonsModel: state.pokemonsModel, index: index,);
+                    return PokemonCard(
+                      pokemonsModel: state.pokemonsModel,
+                      index: index,
+                    );
                   }));
             }
             return Text(
