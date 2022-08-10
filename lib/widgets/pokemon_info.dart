@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
+import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_ability_list.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_stats_list.dart';
+import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_type_list.dart';
 
 // import '../models/pokemon/stats.dart';
 
@@ -20,7 +22,7 @@ class PokemonInformation extends StatelessWidget {
         children: [
           Image.network(
             'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png',
-            height: 200,
+            scale: 2,
           ),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -43,25 +45,9 @@ class PokemonInformation extends StatelessWidget {
               Text('WEIGHT: ${pokemonModel.weight}kg '),
             ],
           ),
-          Row(
-            children: [
-              Text('TYPE:'),
-              Text('${pokemonModel.types.first.type.name}'),
-              Text(' ${pokemonModel.types.last.type.name}'),
-            ],
-          ),
-          Row(
-            children:[
-              Text('Abilities:'),
-              Text(' ${pokemonModel.abilities.first.ability.name}'),
-              Text(' ${pokemonModel.abilities.last.ability.name}'),
-            ]
-          ),
-          Column(
-            children: [
+              TypeList(pokemonModel: pokemonModel),
+              AbilityList(pokemonModel: pokemonModel),
               StatList(pokemonModel: pokemonModel),
-            ],
-          ),
         ],
       ),
     );

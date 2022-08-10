@@ -73,7 +73,7 @@ class PokemonCard extends StatelessWidget {
             children: [
               Image.network(
                 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png',
-                height: 80,
+                scale: 6,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

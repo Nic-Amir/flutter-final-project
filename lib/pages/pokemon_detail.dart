@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_project_pokemon_codex/models/pokemon/stats.dart';
-
 import '../states/pokemon_cubit.dart';
 import '../states/pokemon_states.dart';
 import '../widgets/pokemon_info.dart';
@@ -33,7 +31,6 @@ class PokemonDetails extends StatelessWidget {
                   return Center(child: const CircularProgressIndicator());
                 }
                 if (state is PokemonLoaded) {
-                  print('test');
                   return PokemonInformation(pokemonModel: state.pokemonModel,);
                 }
                 return Text(
