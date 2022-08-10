@@ -13,14 +13,22 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: GridTile(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.network(
+
+          child: GestureDetector(
+            onTap: (){
+              Navigator.of(context)
+                  .pushNamed('/item-details', arguments: (index+1).toString());
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.network(
                   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemsModel.results[index].name}.png', scale: 0.5,),
-              Text('${itemsModel.results[index].name}'),
-            ],
+                Text('${itemsModel.results[index].name}'),
+              ],
+            ),
           ),
-        ));
+        )
+    );
   }
 }
