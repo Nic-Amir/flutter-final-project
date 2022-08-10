@@ -29,7 +29,7 @@ class PokemonDetails extends StatelessWidget {
               bloc: cubit,
               builder: (context, state) {
                 if (state is PokemonLoading) {
-                  return const CircularProgressIndicator();
+                  return Center(child: const CircularProgressIndicator());
                 }
                 if (state is PokemonLoaded) {
                   return PokemonInformation(pokemonModel: state.pokemonModel);
