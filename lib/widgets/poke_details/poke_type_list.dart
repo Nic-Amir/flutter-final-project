@@ -14,9 +14,14 @@ class TypeList extends StatelessWidget {
             itemCount: pokemonModel.types.length,
             itemBuilder: (context, index) {
               return Center(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 10),
-                  child: Text(pokemonModel.types[index].type.name),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text(pokemonModel.types[index].type.name),
+                    ),
+                    Text('hallo waorld'),
+                  ],
                 ),
               );
             }),
