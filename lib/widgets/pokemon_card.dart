@@ -7,10 +7,10 @@ import '../models/pokemons_model.dart';
 
 class PokemonCard extends StatelessWidget {
   const PokemonCard(
-      {required this.index, required this.pokemonsModel, Key? key})
+      { required this.pokemonsModel, Key? key})
       : super(key: key);
   final PokemonsModel pokemonsModel;
-  final int index;
+
 
   @override
   Widget build(BuildContext context) {
