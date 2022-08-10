@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/pages/home_page.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail_param.dart';
+import 'package:flutter_project_pokemon_codex/pages/pokemon_list.dart';
 import 'package:flutter_project_pokemon_codex/states/items_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemons_cubit.dart';
-import 'package:flutter_project_pokemon_codex/pages/pokemons_list.dart';
 
 import 'pages/pokemon_item_list.dart';
 
@@ -28,14 +28,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
         primarySwatch: Colors.cyan,
       ),
       home: MyHomePage(),
       routes: {
         '/poke-details': (context) => PokemonDetailsParam(),
         '/poke-list': (context) => PokemonList(),
-        '/item-list': (context)=> ItemList(),
+        '/item-list': (context) => ItemList(),
       },
     );
   }
