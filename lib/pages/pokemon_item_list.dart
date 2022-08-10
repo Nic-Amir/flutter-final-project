@@ -5,16 +5,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/models/items_model.dart';
 import 'package:flutter_project_pokemon_codex/states/items_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/items_state.dart';
-import 'package:flutter_project_pokemon_codex/widgets/pokemon_item.dart';
+import 'package:flutter_project_pokemon_codex/widgets/pokemon_item_card.dart';
 
-class itemList extends StatefulWidget {
-  const itemList({Key? key}) : super(key: key);
+class ItemList extends StatefulWidget {
+  const ItemList({Key? key}) : super(key: key);
 
   @override
-  State<itemList> createState() => _itemListState();
+  State<ItemList> createState() => _ItemListState();
 }
 
-class _itemListState extends State<itemList> {
+class _ItemListState extends State<ItemList> {
   List<String> items = List.empty(growable: true);
   late TextEditingController controller;
   bool get canSelectMore => items.length < 2;
