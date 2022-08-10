@@ -19,9 +19,10 @@ class ItemInfo extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             child: Image.network(
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemModel.name}.png',scale: 0.5,
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemModel.name}.png',scale: 0.5,),
             ),
-          ),
+          Text('${itemModel.names[7].name}'),
+
         ],
       ),
     );

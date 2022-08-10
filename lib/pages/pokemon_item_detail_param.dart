@@ -7,7 +7,7 @@ class ItemDetailsParam extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final itemId = ModalRoute.of(context)!.settings.arguments as String;
+    final String itemId = ModalRoute.of(context)!.settings.arguments as String;
     return ItemDetails(itemId: itemId,);
   }
 }

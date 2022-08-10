@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/states/item_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/item_state.dart';
-import 'package:flutter_project_pokemon_codex/widgets/pokemon_item.dart';
+import 'package:flutter_project_pokemon_codex/widgets/pokemon_item_card.dart';
 import 'package:flutter_project_pokemon_codex/widgets/pokemon_item_info.dart';
 
 class ItemDetails extends StatelessWidget {
