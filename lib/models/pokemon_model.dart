@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter_project_pokemon_codex/models/pokemon/ability.dart';
+// import 'package:flutter_project_pokemon_codex/models/pokemon/stats.dart';
+
 class PokemonModel {
   PokemonModel({
     required this.abilities,
@@ -68,25 +71,7 @@ class PokemonModel {
       );
 }
 
-class Ability {
-  Ability({
-    required this.ability,
-    required this.isHidden,
-    required this.slot,
-  });
 
-  final Species ability;
-  final bool isHidden;
-  final int slot;
-
-  factory Ability.fromJson(String str) => Ability.fromMap(json.decode(str));
-
-  factory Ability.fromMap(Map<String, dynamic> json) => Ability(
-        ability: Species.fromMap(json["ability"]),
-        isHidden: json["is_hidden"],
-        slot: json["slot"],
-      );
-}
 
 class Species {
   Species({
@@ -562,10 +547,10 @@ class Stat {
   factory Stat.fromJson(String str) => Stat.fromMap(json.decode(str));
 
   factory Stat.fromMap(Map<String, dynamic> json) => Stat(
-        baseStat: json["base_stat"],
-        effort: json["effort"],
-        stat: Species.fromMap(json["stat"]),
-      );
+    baseStat: json["base_stat"],
+    effort: json["effort"],
+    stat: Species.fromMap(json["stat"]),
+  );
 }
 
 class Type {

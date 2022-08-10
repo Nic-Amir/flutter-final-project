@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../states/pokemon_cubit.dart';
 import '../states/pokemon_states.dart';
 import '../widgets/pokemon_info.dart';
@@ -23,7 +22,7 @@ class PokemonDetails extends StatelessWidget {
         appBar: AppBar(
           title: Text('Poke Details'),
         ),
-        extendBodyBehindAppBar: true,
+        // extendBodyBehindAppBar: true,
         body: Center(
           child: BlocBuilder<IdPokemonCubit, PokemonState>(
               bloc: cubit,
@@ -32,11 +31,12 @@ class PokemonDetails extends StatelessWidget {
                   return Center(child: const CircularProgressIndicator());
                 }
                 if (state is PokemonLoaded) {
-                  return PokemonInformation(pokemonModel: state.pokemonModel);
+                  return PokemonInformation(pokemonModel: state.pokemonModel,);
                 }
                 return Text(
                     state is PokemonError ? state.errorMsg : 'Unknown error');
               }),
-        ));
+        )
+      ,);
   }
 }

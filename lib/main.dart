@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/poke-details': (context) => PokemonDetailsParam(),
         '/poke-list': (context) => PokemonList(),
-        '/item-list': (context)=> ItemList(),
-        '/item-details': (context)=> ItemDetailsParam(),
+        '/item-list': (context) => ItemList(),
+        '/item-details': (context) => ItemDetailsParam(),
       },
     );
   }
