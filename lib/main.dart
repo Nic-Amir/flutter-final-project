@@ -9,6 +9,8 @@ import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemons_cubit.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemons_list.dart';
 
+import 'pages/pokemon_item_list.dart';
+
 void main() {
   runApp(const MyApp());
   runApp(MultiBlocProvider(providers: [
