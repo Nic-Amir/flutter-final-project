@@ -18,7 +18,7 @@ class StatList extends StatelessWidget {
             itemCount: pokemonModel.stats.length,
             itemBuilder: (context, index) {
               return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(pokemonModel.stats[index].stat.name),
                   Text('${pokemonModel.stats[index].baseStat}'),
