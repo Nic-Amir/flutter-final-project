@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/pages/home_page.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail_param.dart';
+import 'package:flutter_project_pokemon_codex/pages/pokemon_item_list_stful.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_list.dart';
 import 'package:flutter_project_pokemon_codex/states/items_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/poke-details': (context) => PokemonDetailsParam(),
         '/poke-list': (context) => PokemonList(),
-        '/item-list': (context) => ItemList(),
+        '/item-list': (context) => itemList(),
       },
     );
   }
