@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -10,6 +11,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation _cloudAnimation;
+  AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
 
   @override
   void initState() {
@@ -24,6 +26,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     _cloudAnimation =
         Tween<Offset>(begin: Offset(400.0, 00), end: Offset(-400.0, 00))
             .animate(_animationController);
+
+    audioPlayer.open(Audio('little_root_town.mp3'));
   }
 
   @override
