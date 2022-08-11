@@ -52,8 +52,11 @@ class ItemInfo extends StatelessWidget {
                 ),
                 ItemEffect(itemModel: itemModel),
 
-        ],
-      ),
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }
