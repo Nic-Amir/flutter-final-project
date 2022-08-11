@@ -7,25 +7,24 @@ class TypeList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Card(
-        child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: pokemonModel.types.length,
-            itemBuilder: (context, index) {
-              return Center(
-                child: Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(bottom: 10),
-                      child: Text(pokemonModel.types[index].type.name),
-                    ),
-                    Text('hallo waorld'),
-                  ],
-                ),
-              );
-            }),
+
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+
+
       ),
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: pokemonModel.types.length,
+          itemBuilder: (context, index) {
+            return Center(
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: Text(pokemonModel.types[index].type.name),
+              ),
+            );
+          }),
     );
   }
 }

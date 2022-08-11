@@ -8,24 +8,30 @@ class StatList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(children: [
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(children: [
       Text('Stats'),
       Container(
-        height: 100,
-        width: MediaQuery.of(context).size.width,
-        child: ListView.builder(
-          shrinkWrap: true,
-            itemCount: pokemonModel.stats.length,
-            itemBuilder: (context, index) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(pokemonModel.stats[index].stat.name),
-                  Text('${pokemonModel.stats[index].baseStat}'),
-                ],
-              );
-            }),
+          height: 80,
+          width: MediaQuery.of(context).size.width,
+          child: ListView.builder(
+            shrinkWrap: true,
+              itemCount: pokemonModel.stats.length,
+              itemBuilder: (context, index) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(pokemonModel.stats[index].stat.name),
+                    Text('${pokemonModel.stats[index].baseStat}'),
+                  ],
+                );
+              }),
       )
-    ]));
+    ]),
+        ));
   }
 }
