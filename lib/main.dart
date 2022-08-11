@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.cyan,
+        brightness: Brightness.light,
+        primarySwatch: Colors.red,
       ),
       home: MyHomePage(),
       routes: {
