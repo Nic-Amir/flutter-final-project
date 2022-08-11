@@ -21,9 +21,11 @@ class ItemCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.network(
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemsModel.name}.png',
-              scale: 0.5,
-            ),
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemsModel.name}.png',
+                scale: 0.5, errorBuilder: (BuildContext context,
+                    Object exception, StackTrace? stackTrace) {
+              return const Text('😢 no image found');
+            }),
             Text('${itemsModel.name}'),
             Text('$id')
           ],

@@ -44,14 +44,15 @@ class TypeList extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
+      child: Container(
+        padding: EdgeInsets.all(10),
         child: Column(children: [
           Text(
             'Type',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: Color.fromARGB(166, 0, 0, 0)),
           ),
           ListView.builder(
               shrinkWrap: true,
