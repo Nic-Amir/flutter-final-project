@@ -1,3 +1,4 @@
+import 'package:flutter_project_pokemon_codex/models/evolution_model.dart';
 import 'package:flutter_project_pokemon_codex/models/items_model.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemons_model.dart';
@@ -81,6 +82,24 @@ class ItemsService {
       return ItemsModel.fromJson(response.body);
     } else {
       throw Exception('error error error please try again');
+    }
+  }
+}
+
+class Evolution {
+  Future<EvolutionModel> fetchEvolution( String evolutionId) async {
+    final Uri EvolutionUrl = Uri(
+      scheme: 'https',
+      host: 'pokeapi.co',
+      path: 'api/v2/evolution-chain/$evolutionId',
+    );
+
+    http.Response response = await http.get(EvolutionUrl);
+
+    if (response.statusCode == 200) {
+      return EvolutionModel.fromJson(response.body);
+    } else {
+      throw Exception('Evolution Error, Failed to fetch!');
     }
   }
 }
