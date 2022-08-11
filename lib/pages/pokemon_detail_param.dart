@@ -7,7 +7,6 @@ class PokemonDetailsParam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pokeId = ModalRoute.of(context)!.settings.arguments as String;
-    final evolutionId = ModalRoute.of(context)!.settings.arguments as String;
-    return PokemonDetails(pokeId: pokeId,evolutionId: evolutionId,);
+    return PokemonDetails(pokeId: pokeId);
   }
 }

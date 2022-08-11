@@ -6,13 +6,9 @@ import '../widgets/pokemon_info.dart';
 
 
 class PokemonDetails extends StatelessWidget {
-  const PokemonDetails({required this.pokeId, required this.evolutionId,Key? key}) : super(key: key);
+  const PokemonDetails({required this.pokeId,Key? key}) : super(key: key);
 
   final String pokeId;
-  final String evolutionId;
-
-  // get evolutionId => pokeId;
-
 
   void navigatePokeDex(BuildContext context) {
     Navigator.of(context).pushNamed('/poke-list');
@@ -37,7 +33,7 @@ class PokemonDetails extends StatelessWidget {
                       return Center(child: const CircularProgressIndicator());
                     }
                     if (state is PokemonLoaded) {
-                      return PokemonInformation(pokemonModel: state.pokemonModel, evolutionId: evolutionId,);
+                      return PokemonInformation(pokemonModel: state.pokemonModel);
                     }
                     return Text(
                         state is PokemonError ? state.errorMsg : 'Unknown error');

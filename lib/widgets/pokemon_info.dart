@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
-import 'package:flutter_project_pokemon_codex/states/evolution_cubit.dart';
-import 'package:flutter_project_pokemon_codex/states/evolution_state.dart';
-import 'package:flutter_project_pokemon_codex/widgets/poke_details/evolution_chain.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_ability_list.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_stats_list.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_type_list.dart';
@@ -11,16 +7,12 @@ import 'package:flutter_project_pokemon_codex/widgets/poke_details/species.dart'
 
 class PokemonInformation extends StatelessWidget {
   const PokemonInformation(
-      {required this.pokemonModel, required this.evolutionId, Key? key})
+      {required this.pokemonModel, Key? key})
       : super(key: key);
-  final String evolutionId;
   final PokemonModel pokemonModel;
 
   @override
   Widget build(BuildContext context) {
-    IdEvolutionCubit cubitEvolution = BlocProvider.of<IdEvolutionCubit>(context)
-      ..fetchEvolution(evolutionId);
-
     return Container(
       height: MediaQuery.of(context).size.height,
       width: 400,
@@ -85,20 +77,6 @@ class PokemonInformation extends StatelessWidget {
                           height: 10,
                         ),
                         StatsList(pokemonModel: pokemonModel),
-                        BlocBuilder<IdEvolutionCubit, EvolutionState>(
-                            bloc: cubitEvolution,
-                            builder: (context, state) {
-                              if (state is EvolutionLoading) {
-                                return Center(child: const CircularProgressIndicator());
-                              }
-                              if (state is EvolutionLoaded) {
-                                return EvolutionChain(
-                                    evolutionModel: state.evolutionModel);
-                              }
-                              return Text(state is EvolutionError
-                                  ? state.errorMsg
-                                  : 'Unknown error');
-                            }),
                       ]),
                 ),
               ],

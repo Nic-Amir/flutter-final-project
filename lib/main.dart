@@ -4,7 +4,6 @@ import 'package:flutter_project_pokemon_codex/pages/home_page.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_detail_param.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_item_detail_param.dart';
 import 'package:flutter_project_pokemon_codex/pages/pokemon_list.dart';
-import 'package:flutter_project_pokemon_codex/states/evolution_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/item_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/items_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
@@ -18,7 +17,6 @@ void main() {
     BlocProvider(create: (context) => PokemonsCubit()),
     BlocProvider(create: (context) => ItemsCubit()),
     BlocProvider(create: (context) => IdItemCubit()),
-    BlocProvider(create: (context) => IdEvolutionCubit()),
   ], child: const MyApp()));
 }
 
