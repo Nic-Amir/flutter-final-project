@@ -84,20 +84,6 @@ class PokemonInformation extends StatelessWidget {
                         StatList(pokemonModel: pokemonModel),
                       ]),
                 ),
-                BlocBuilder<IdEvolutionCubit, EvolutionState>(
-                    bloc: cubitEvolution,
-                    builder: (context, state) {
-                      if (state is EvolutionLoading) {
-                        return Center(child: const CircularProgressIndicator());
-                      }
-                      if (state is EvolutionLoaded) {
-                        return EvolutionChain(
-                            evolutionModel: state.evolutionModel);
-                      }
-                      return Text(state is EvolutionError
-                          ? state.errorMsg
-                          : 'Unknown error');
-                    }),
               ],
             ),
           ),
