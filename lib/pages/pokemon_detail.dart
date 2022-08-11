@@ -6,11 +6,12 @@ import '../widgets/pokemon_info.dart';
 
 
 class PokemonDetails extends StatelessWidget {
-  const PokemonDetails({required this.pokeId, Key? key}) : super(key: key);
+  const PokemonDetails({required this.pokeId, required this.evolutionId,Key? key}) : super(key: key);
 
   final String pokeId;
+  final String evolutionId;
 
-  get evolutionId => pokeId;
+  // get evolutionId => pokeId;
 
 
   void navigatePokeDex(BuildContext context) {
@@ -27,7 +28,7 @@ class PokemonDetails extends StatelessWidget {
           title: Text('Poke Details'),
         ),
         body: Center(
-          child: Column(
+          child: ListView(
             children: [
               BlocBuilder<IdPokemonCubit, PokemonState>(
                   bloc: cubit,

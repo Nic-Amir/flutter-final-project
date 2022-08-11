@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_project_pokemon_codex/models/evolution_model.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
 import 'package:flutter_project_pokemon_codex/states/evolution_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/evolution_state.dart';
@@ -23,6 +22,8 @@ class PokemonInformation extends StatelessWidget {
       ..fetchEvolution(evolutionId);
 
     return Container(
+      height: MediaQuery.of(context).size.height,
+      width: 400,
       child: Stack(children: [
         Positioned(
           height: MediaQuery.of(context).size.height,
@@ -32,8 +33,10 @@ class PokemonInformation extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: ListView(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -82,6 +85,20 @@ class PokemonInformation extends StatelessWidget {
                           height: 10,
                         ),
                         StatsList(pokemonModel: pokemonModel),
+                        BlocBuilder<IdEvolutionCubit, EvolutionState>(
+                            bloc: cubitEvolution,
+                            builder: (context, state) {
+                              if (state is EvolutionLoading) {
+                                return Center(child: const CircularProgressIndicator());
+                              }
+                              if (state is EvolutionLoaded) {
+                                return EvolutionChain(
+                                    evolutionModel: state.evolutionModel);
+                              }
+                              return Text(state is EvolutionError
+                                  ? state.errorMsg
+                                  : 'Unknown error');
+                            }),
                       ]),
                 ),
               ],

@@ -10,22 +10,23 @@ class EvolutionChain extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
-      // child: ListView.builder(
-      //     shrinkWrap: true,
-      //     itemCount: evolutionModel.chain.evolvesTo.length,
-      //     itemBuilder: (context, index) {
-      //       return Center(
-      //         child: Container(
-      //           padding: EdgeInsets.only(bottom: 10),
-      //           child: Text(evolutionModel.chain.evolvesTo.[index].name),
-      //         ),
-      //       );
-      //     }),
-      child: Row(
-        children: [
-          Text(evolutionModel.chain.evolvesTo.first.species.name),
-        ],
-      ),
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: evolutionModel.chain.evolvesTo.length,
+          itemBuilder: (context, index) {
+            return Center(
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(evolutionModel.chain.species.name),
+                    Text(evolutionModel.chain.evolvesTo.first.species.name),
+                  ],
+                ),
+              ),
+            );
+          }),
     );
   }
 }

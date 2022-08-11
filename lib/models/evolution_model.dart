@@ -2,103 +2,103 @@ import 'dart:convert';
 
 class EvolutionModel {
   EvolutionModel({
-    required this.id,
     required this.babyTriggerItem,
     required this.chain,
+    required this.id,
   });
 
-  final int id;
   final dynamic babyTriggerItem;
   final Chain chain;
+  final int id;
 
   factory EvolutionModel.fromJson(String str) => EvolutionModel.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory EvolutionModel.fromMap(Map<String, dynamic> json) => EvolutionModel(
-    id: json["id"],
     babyTriggerItem: json["baby_trigger_item"],
     chain: Chain.fromMap(json["chain"]),
+    id: json["id"],
   );
 
   Map<String, dynamic> toMap() => {
-    "id": id,
     "baby_trigger_item": babyTriggerItem,
     "chain": chain.toMap(),
+    "id": id,
   };
 }
 
 class Chain {
   Chain({
-    required this.isBaby,
-    required this.species,
     required this.evolutionDetails,
     required this.evolvesTo,
+    required this.isBaby,
+    required this.species,
   });
 
-  final bool isBaby;
-  final Species species;
   final List<EvolutionDetail> evolutionDetails;
   final List<Chain> evolvesTo;
+  final bool isBaby;
+  final Species species;
 
   factory Chain.fromJson(String str) => Chain.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory Chain.fromMap(Map<String, dynamic> json) => Chain(
-    isBaby: json["is_baby"],
-    species: Species.fromMap(json["species"]),
     evolutionDetails: List<EvolutionDetail>.from(json["evolution_details"].map((x) => EvolutionDetail.fromMap(x))),
     evolvesTo: List<Chain>.from(json["evolves_to"].map((x) => Chain.fromMap(x))),
+    isBaby: json["is_baby"],
+    species: Species.fromMap(json["species"]),
   );
 
   Map<String, dynamic> toMap() => {
+    "evolution_details": List<dynamic>.from(evolutionDetails.map((x) => x.toMap())),
+    "evolves_to": List<dynamic>.from(evolvesTo.map((x) => x.toMap())),
     "is_baby": isBaby,
     "species": species.toMap(),
-    "evolution_details": evolutionDetails == null ? null : List<dynamic>.from(evolutionDetails.map((x) => x.toMap())),
-    "evolves_to": List<dynamic>.from(evolvesTo.map((x) => x.toMap())),
   };
 }
 
 class EvolutionDetail {
   EvolutionDetail({
-    required this.item,
-    required this.trigger,
     required this.gender,
     required this.heldItem,
+    required this.item,
     required this.knownMove,
     required this.knownMoveType,
     required this.location,
-    required this.minLevel,
-    required this.minHappiness,
-    required this.minBeauty,
     required this.minAffection,
+    required this.minBeauty,
+    required this.minHappiness,
+    required this.minLevel,
     required this.needsOverworldRain,
     required this.partySpecies,
     required this.partyType,
     required this.relativePhysicalStats,
     required this.timeOfDay,
     required this.tradeSpecies,
+    required this.trigger,
     required this.turnUpsideDown,
   });
 
-  final dynamic item;
-  final Species trigger;
   final dynamic gender;
   final dynamic heldItem;
+  final dynamic item;
   final dynamic knownMove;
   final dynamic knownMoveType;
   final dynamic location;
-  final int minLevel;
-  final dynamic minHappiness;
-  final dynamic minBeauty;
   final dynamic minAffection;
+  final dynamic minBeauty;
+  final dynamic minHappiness;
+  final int minLevel;
   final bool needsOverworldRain;
   final dynamic partySpecies;
   final dynamic partyType;
   final dynamic relativePhysicalStats;
   final String timeOfDay;
   final dynamic tradeSpecies;
+  final Species trigger;
   final bool turnUpsideDown;
 
   factory EvolutionDetail.fromJson(String str) => EvolutionDetail.fromMap(json.decode(str));
@@ -106,44 +106,44 @@ class EvolutionDetail {
   String toJson() => json.encode(toMap());
 
   factory EvolutionDetail.fromMap(Map<String, dynamic> json) => EvolutionDetail(
-    item: json["item"],
-    trigger: Species.fromMap(json["trigger"]),
     gender: json["gender"],
     heldItem: json["held_item"],
+    item: json["item"],
     knownMove: json["known_move"],
     knownMoveType: json["known_move_type"],
     location: json["location"],
-    minLevel: json["min_level"],
-    minHappiness: json["min_happiness"],
-    minBeauty: json["min_beauty"],
     minAffection: json["min_affection"],
+    minBeauty: json["min_beauty"],
+    minHappiness: json["min_happiness"],
+    minLevel: json["min_level"],
     needsOverworldRain: json["needs_overworld_rain"],
     partySpecies: json["party_species"],
     partyType: json["party_type"],
     relativePhysicalStats: json["relative_physical_stats"],
     timeOfDay: json["time_of_day"],
     tradeSpecies: json["trade_species"],
+    trigger: Species.fromMap(json["trigger"]),
     turnUpsideDown: json["turn_upside_down"],
   );
 
   Map<String, dynamic> toMap() => {
-    "item": item,
-    "trigger": trigger.toMap(),
     "gender": gender,
     "held_item": heldItem,
+    "item": item,
     "known_move": knownMove,
     "known_move_type": knownMoveType,
     "location": location,
-    "min_level": minLevel,
-    "min_happiness": minHappiness,
-    "min_beauty": minBeauty,
     "min_affection": minAffection,
+    "min_beauty": minBeauty,
+    "min_happiness": minHappiness,
+    "min_level": minLevel,
     "needs_overworld_rain": needsOverworldRain,
     "party_species": partySpecies,
     "party_type": partyType,
     "relative_physical_stats": relativePhysicalStats,
     "time_of_day": timeOfDay,
     "trade_species": tradeSpecies,
+    "trigger": trigger.toMap(),
     "turn_upside_down": turnUpsideDown,
   };
 }
