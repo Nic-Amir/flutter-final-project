@@ -11,31 +11,7 @@ class StatsList extends StatefulWidget {
   State<StatsList> createState() => _StatsListState();
 }
 
-class _StatsListState extends State<StatsList> with TickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation _statAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
-
-    _animationController.addListener(() => setState(() {}));
-    _animationController.forward();
-
-    _statAnimation = Tween<double>(
-            begin: 0, end: widget.pokemonModel.stats[0].baseStat.toDouble())
-        .animate(_animationController);
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
+class _StatsListState extends State<StatsList> {
   @override
   Widget build(BuildContext context) {
     return Card(
