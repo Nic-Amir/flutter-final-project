@@ -62,16 +62,17 @@ class _StatsListState extends State<StatsList> {
           borderRadius: BorderRadius.circular(15.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(children: [
             Text(
               'Stats',
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Color.fromARGB(166, 0, 0, 0)),
             ),
             Container(
-              height: 100,
+              height: 190,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                   shrinkWrap: true,
@@ -96,7 +97,7 @@ class _StatsListState extends State<StatsList> {
                                   alignment: Alignment.center,
                                   child: Container(
                                     width: 10,
-                                    height: 18,
+                                    height: 22,
                                     color: widget.pokemonModel.types.first.type
                                                 .name ==
                                             "grass"

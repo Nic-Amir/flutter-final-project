@@ -54,9 +54,9 @@ class AbilityList extends StatelessWidget {
                 Text(
                   'Ability',
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Color.fromARGB(166, 0, 0, 0)),
                 ),
                 SizedBox(
                   height: 5,

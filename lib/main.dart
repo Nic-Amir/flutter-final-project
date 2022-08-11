@@ -11,7 +11,6 @@ import 'package:flutter_project_pokemon_codex/states/pokemons_cubit.dart';
 import 'pages/pokemon_item_list.dart';
 
 void main() {
-  runApp(const MyApp());
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => IdPokemonCubit()),
     BlocProvider(create: (context) => PokemonsCubit()),

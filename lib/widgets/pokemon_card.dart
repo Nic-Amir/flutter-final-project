@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_cubit.dart';
 import 'package:flutter_project_pokemon_codex/states/pokemon_states.dart';
+import 'dart:convert';
 
 import '../models/pokemons_model.dart';
 
@@ -70,22 +71,34 @@ class PokemonCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.network(
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png',
-                height: 80,
-              ),
+                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png',
+                  height: 80, errorBuilder: (BuildContext context,
+                      Object exception, StackTrace? stackTrace) {
+                return const Text('😢 no image found');
+              }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/$id.gif',
-                    height: 20,
+                  Container(
+                    child: (() {
+                      if (int.parse(id) < 650) {
+                        return Image.network(
+                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/$id.gif',
+                          height: 20,
+                        );
+                      }
+                      return Container();
+                    }()),
                   ),
                   SizedBox(
                     width: 5,
                   ),
-                  Text(
-                    '${pokemonsModel.name}',
-                    style: TextStyle(fontSize: 17),
+                  Flexible(
+                    child: Text(
+                      '${pokemonsModel.name}',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 17),
+                    ),
                   ),
                 ],
               ),

@@ -49,31 +49,40 @@ class PokemonInformation extends StatelessWidget {
                                                       ? Colors.black26
                                                       : Colors.pink,
       child: ListView(children: [
-        Image.network(
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png',
-          scale: 2,
-        ),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            '#${pokemonModel.id}',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+        Container(
+          height: 300,
+          child: Image.network(
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png',
+            scale: 2,
           ),
-          SizedBox(width: 10),
-          Text(
-            '${pokemonModel.name.toUpperCase()}',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
+        ),
+        Container(
+          padding: EdgeInsets.all(10),
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text(
+              '#${pokemonModel.id}',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(166, 0, 0, 0)),
             ),
-          )
-        ]),
+            SizedBox(width: 10),
+            Text(
+              '${pokemonModel.name.toUpperCase()}',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(166, 0, 0, 0)),
+            )
+          ]),
+        ),
         SpeciesList(pokemonModel: pokemonModel),
         TypeList(pokemonModel: pokemonModel),
         AbilityList(pokemonModel: pokemonModel),
         StatsList(pokemonModel: pokemonModel),
+        Container(
+          height: 200,
+        )
       ]),
     );
   }

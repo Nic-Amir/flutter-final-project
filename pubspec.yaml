@@ -36,6 +36,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   http: ^0.13.5
   audioplayers: ^1.0.1
+  assets_audio_player: ^3.0.5
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
     - assets/clouds.png
     - assets/pokemon_cloud.png
     - assets/pokemon-logo.png
+    - assets/pokebg.png
     - assets/little_root_town.mp3
 
   # To add assets to your application, add an assets section, like this:

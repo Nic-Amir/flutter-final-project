@@ -4,17 +4,14 @@ import 'package:flutter_project_pokemon_codex/widgets/item_details/item_category
 import 'package:flutter_project_pokemon_codex/widgets/item_details/item_description.dart';
 import 'package:flutter_project_pokemon_codex/widgets/item_details/item_effect.dart';
 
-
 class ItemInfo extends StatelessWidget {
-  const ItemInfo({required this.itemModel, Key? key})
-      : super(key: key);
+  const ItemInfo({required this.itemModel, Key? key}) : super(key: key);
 
   final ItemModel itemModel;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
-
       children: [
         Container(
           height: MediaQuery.of(context).size.height,
@@ -32,13 +29,21 @@ class ItemInfo extends StatelessWidget {
                   height: 20,
                 ),
                 Image.network(
-                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemModel.name}.png',scale: 0.3,),
+                    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemModel.name}.png',
+                    scale: 0.3, errorBuilder: (BuildContext context,
+                        Object exception, StackTrace? stackTrace) {
+                  return const Text('😢 no image found');
+                }),
                 SizedBox(
                   height: 20,
                 ),
-                Text('${itemModel.names[7].name}', style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.bold,
-                ),),
+                Text(
+                  '${itemModel.names[7].name}',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 SizedBox(
                   height: 30,
                 ),
@@ -51,7 +56,6 @@ class ItemInfo extends StatelessWidget {
                   height: 10,
                 ),
                 ItemEffect(itemModel: itemModel),
-
               ],
             ),
           ),

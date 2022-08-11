@@ -50,16 +50,16 @@ class SpeciesList extends StatelessWidget {
           Text(
             'Species',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: Color.fromARGB(166, 0, 0, 0)),
           ),
           SizedBox(
             height: 5,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            Text('HEIGHT: ${pokemonModel.height}m'),
-            Text('WEIGHT: ${pokemonModel.weight}kg '),
+            Text('Height: ${pokemonModel.height} m'),
+            Text('Weight: ${pokemonModel.weight} kg '),
           ]),
         ]),
       ),
