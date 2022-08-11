@@ -35,9 +35,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^8.0.1
   http: ^0.13.5
-  cached_network_image: ^3.2.1
-  stats_animation: ^1.0.3
-  assets_audio_player: ^3.0.5
   audioplayers: ^1.0.1
 
 dev_dependencies:
