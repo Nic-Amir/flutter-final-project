@@ -60,6 +60,10 @@ flutter:
   assets:
     - assets/error2.png
     - assets/error.png
+    - assets/pokedex_logo.png
+    - assets/clouds.png
+    - assets/pokemon_cloud.png
+    - assets/pokemon-logo.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
