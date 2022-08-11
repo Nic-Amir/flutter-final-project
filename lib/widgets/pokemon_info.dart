@@ -81,7 +81,7 @@ class PokemonInformation extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        StatList(pokemonModel: pokemonModel),
+                        StatsList(pokemonModel: pokemonModel),
                       ]),
                 ),
               ],
