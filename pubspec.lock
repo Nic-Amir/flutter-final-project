@@ -275,13 +275,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.11.1"
   platform:
     dependency: transitive
     description:
@@ -310,13 +303,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.3"
-  rxdart:
-    dependency: transitive
-    description:
-      name: rxdart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.27.5"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -329,20 +315,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
-  sqflite:
-    dependency: transitive
-    description:
-      name: sqflite
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.3+1"
-  sqflite_common:
-    dependency: transitive
-    description:
-      name: sqflite_common
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.1+1"
   stack_trace:
     dependency: transitive
     description:
@@ -350,13 +322,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
-  stats_animation:
-    dependency: "direct main"
-    description:
-      name: stats_animation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
   stream_channel:
     dependency: transitive
     description:
@@ -371,13 +336,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
-  synchronized:
-    dependency: transitive
-    description:
-      name: synchronized
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.0+2"
   term_glyph:
     dependency: transitive
     description:
