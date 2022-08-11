@@ -14,20 +14,34 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Pokedex'),
       ),
-
       body: Center(
-        child : Column(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.of(context).pushNamed('/poke-list');
-                },
-                child: Text('Pokedex')),
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.of(context).pushNamed('/item-list');
-                },
-                child: Text('Items'))
+            Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                Image.asset('assets/pokemon-logo.png', height: 400, width: 400),
+                Image.asset('assets/pokemon_cloud.png', scale: 3,),
+
+        ]
+                ),
+
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/poke-list');
+                  },
+                  child: Text('Pokedex')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/item-list');
+                  },
+                  child: Text('Items'))
+            ]),
           ],
         ),
       ),
