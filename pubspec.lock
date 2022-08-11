@@ -331,6 +331,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  stats_animation:
+    dependency: "direct main"
+    description:
+      name: stats_animation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   stream_channel:
     dependency: transitive
     description:

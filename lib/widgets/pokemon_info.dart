@@ -14,72 +14,66 @@ class PokemonInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(children: [
-        Positioned(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          // left: 10.0,
-          // top: MediaQuery.of(context).size.height * 0.1,
-          child: Card(
-            color: Color.fromRGBO(107, 4, 4, 1.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.network(
-                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png',
-                          scale: 2,
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                '#${pokemonModel.id}',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('${pokemonModel.name}',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                )
-                            ]),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        SpeciesList(pokemonModel: pokemonModel),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TypeList(pokemonModel: pokemonModel),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        AbilityList(pokemonModel: pokemonModel),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        StatList(pokemonModel: pokemonModel),
-                      ]),
-                ),
-              ],
+      padding: EdgeInsets.all(10),
+      color: pokemonModel.types.first.type.name == "grass"
+          ? Colors.greenAccent
+          : pokemonModel.types.first.type.name == "fire"
+              ? Colors.redAccent
+              : pokemonModel.types.first.type.name == "water"
+                  ? Colors.blue
+                  : pokemonModel.types.first.type.name == "poison"
+                      ? Colors.deepPurpleAccent
+                      : pokemonModel.types.first.type.name == "electric"
+                          ? Colors.amber
+                          : pokemonModel.types.first.type.name == "rock"
+                              ? Colors.grey
+                              : pokemonModel.types.first.type.name == "ground"
+                                  ? Colors.brown
+                                  : pokemonModel.types.first.type.name ==
+                                          "psychic"
+                                      ? Colors.indigo
+                                      : pokemonModel.types.first.type.name ==
+                                              "fighting"
+                                          ? Colors.orange
+                                          : pokemonModel
+                                                      .types.first.type.name ==
+                                                  "bug"
+                                              ? Colors.lightGreenAccent
+                                              : pokemonModel.types.first.type
+                                                          .name ==
+                                                      "ghost"
+                                                  ? Colors.deepPurple
+                                                  : pokemonModel.types.first
+                                                              .type.name ==
+                                                          "normal"
+                                                      ? Colors.black26
+                                                      : Colors.pink,
+      child: ListView(children: [
+        Image.network(
+          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonModel.id}.png',
+          scale: 2,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text(
+            '#${pokemonModel.id}',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
           ),
-        ),
+          SizedBox(width: 10),
+          Text(
+            '${pokemonModel.name.toUpperCase()}',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ]),
+        SpeciesList(pokemonModel: pokemonModel),
+        TypeList(pokemonModel: pokemonModel),
+        AbilityList(pokemonModel: pokemonModel),
+        StatsList(pokemonModel: pokemonModel),
       ]),
     );
   }
