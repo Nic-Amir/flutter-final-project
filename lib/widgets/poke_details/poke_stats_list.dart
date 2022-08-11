@@ -11,8 +11,30 @@ class StatsList extends StatefulWidget {
   State<StatsList> createState() => _StatsListState();
 }
 
-class _StatsListState extends State<StatsList> {
-  bool selected = false;
+class _StatsListState extends State<StatsList> with TickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation _statAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 1500));
+
+    _animationController.addListener(() => setState(() {}));
+    _animationController.forward();
+
+    _statAnimation = Tween<double>(
+            begin: 0, end: widget.pokemonModel.stats[0].baseStat.toDouble())
+        .animate(_animationController);
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,17 +95,100 @@ class _StatsListState extends State<StatsList> {
               ),
             ),
             Container(
-              height: 80,
+              height: 100,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                   shrinkWrap: true,
                   itemCount: widget.pokemonModel.stats.length,
                   itemBuilder: (context, index) {
                     return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(widget.pokemonModel.stats[index].stat.name),
-                        Text('${widget.pokemonModel.stats[index].baseStat}'),
+                        TweenAnimationBuilder<double>(
+                            tween: Tween<double>(
+                                begin: 0,
+                                end: widget.pokemonModel.stats[index].baseStat
+                                        .toDouble() /
+                                    2),
+                            duration: const Duration(seconds: 5),
+                            builder: (BuildContext context, double size,
+                                Widget? child) {
+                              return Container(
+                                margin: EdgeInsets.symmetric(vertical: 5),
+                                child: Transform.scale(
+                                  scaleX: size,
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    width: 10,
+                                    height: 18,
+                                    color: widget.pokemonModel.types.first.type
+                                                .name ==
+                                            "grass"
+                                        ? Colors.greenAccent
+                                        : widget.pokemonModel.types.first.type.name ==
+                                                "fire"
+                                            ? Colors.redAccent
+                                            : widget.pokemonModel.types.first
+                                                        .type.name ==
+                                                    "water"
+                                                ? Colors.blue
+                                                : widget.pokemonModel.types
+                                                            .first.type.name ==
+                                                        "poison"
+                                                    ? Colors.deepPurpleAccent
+                                                    : widget
+                                                                .pokemonModel
+                                                                .types
+                                                                .first
+                                                                .type
+                                                                .name ==
+                                                            "electric"
+                                                        ? Colors.amber
+                                                        : widget
+                                                                    .pokemonModel
+                                                                    .types
+                                                                    .first
+                                                                    .type
+                                                                    .name ==
+                                                                "rock"
+                                                            ? Colors.grey
+                                                            : widget
+                                                                        .pokemonModel
+                                                                        .types
+                                                                        .first
+                                                                        .type
+                                                                        .name ==
+                                                                    "ground"
+                                                                ? Colors.brown
+                                                                : widget
+                                                                            .pokemonModel
+                                                                            .types
+                                                                            .first
+                                                                            .type
+                                                                            .name ==
+                                                                        "psychic"
+                                                                    ? Colors.indigo
+                                                                    : widget.pokemonModel.types.first.type.name == "fighting"
+                                                                        ? Colors.orange
+                                                                        : widget.pokemonModel.types.first.type.name == "bug"
+                                                                            ? Colors.lightGreenAccent
+                                                                            : widget.pokemonModel.types.first.type.name == "ghost"
+                                                                                ? Colors.deepPurple
+                                                                                : widget.pokemonModel.types.first.type.name == "normal"
+                                                                                    ? Colors.black26
+                                                                                    : Colors.pink,
+                                  ),
+                                ),
+                              );
+                            }),
+                        Container(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Text(
+                            '${widget.pokemonModel.stats[index].stat.name}                                  ',
+                            style:
+                                TextStyle(color: Color.fromARGB(127, 0, 0, 0)),
+                          ),
+                        ),
                       ],
                     );
                   }),
