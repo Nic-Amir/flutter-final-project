@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_pokemon_codex/models/item_model.dart';
+import 'package:flutter_project_pokemon_codex/widgets/item_details/item_category.dart';
+import 'package:flutter_project_pokemon_codex/widgets/item_details/item_description.dart';
+import 'package:flutter_project_pokemon_codex/widgets/item_details/item_effect.dart';
 
 
 class ItemInfo extends StatelessWidget {
@@ -10,36 +13,50 @@ class ItemInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.red,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            child: Image.network(
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemModel.name}.png',scale: 0.3,),
-            ),
-          SizedBox(
-              width: 200,
-              child: Text('${itemModel.names[7].name}')),
-          Row(
-            children: [
-              SizedBox(
-                  // width: 900,
-                  child: Text("${itemModel.flavorTextEntries.first.text}")),
-            ],
-          ),
-          Text(itemModel.effectEntries.first.effect),
-          Text(itemModel.effectEntries.first.shortEffect),
-          Text(itemModel.category.name),
+    return ListView(
 
-        ],
-      ),
+      children: [
+        Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Card(
+            color: Colors.cyanAccent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Image.network(
+                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${itemModel.name}.png',scale: 0.3,),
+                SizedBox(
+                  height: 20,
+                ),
+                Text('${itemModel.names[7].name}', style: TextStyle(
+                  fontSize: 20, fontWeight: FontWeight.bold,
+                ),),
+                SizedBox(
+                  height: 30,
+                ),
+                ItemDescription(itemModel: itemModel),
+                SizedBox(
+                  height: 10,
+                ),
+                ItemCategory(itemModel: itemModel),
+                SizedBox(
+                  height: 10,
+                ),
+                ItemEffect(itemModel: itemModel),
+
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }
