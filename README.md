@@ -4,8 +4,15 @@ A new Flutter project.
 
 Some of the ScreenShots
 
-![alt text](https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/homepage.png?raw=true)
+<img src="https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/homepage.png?raw=true" height="400"/>
 
+<img src="https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/poke-list.png?raw=true" height="400"/>
+
+<img src="https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/poke-details.png?raw=true" height="400"/>
+
+<img src="https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/item-list.png?raw=true" height="400"/>
+
+<img src="https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/item-details.png?raw=true" height="400"/>
 
 ## Getting Started
 
