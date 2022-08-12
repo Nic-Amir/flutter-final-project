@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_ability_list.dart';
+import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_shinny.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_stats_list.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/poke_type_list.dart';
 import 'package:flutter_project_pokemon_codex/widgets/poke_details/species.dart';
@@ -80,8 +81,9 @@ class PokemonInformation extends StatelessWidget {
         TypeList(pokemonModel: pokemonModel),
         AbilityList(pokemonModel: pokemonModel),
         StatsList(pokemonModel: pokemonModel),
+        PokeShinny(pokemonModel: pokemonModel),
         Container(
-          height: 200,
+          height: 50,
         )
       ]),
     );
