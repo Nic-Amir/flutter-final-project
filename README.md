@@ -4,7 +4,7 @@ A new Flutter project.
 
 Some of the ScreenShots
 
-![alt text](https://github.com/Nic-Amir/flutter-final-project/blob/master/poke-detail.png?raw=true)
+![alt text](https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/homepage.png?raw=true)
 
 
 ## Getting Started
