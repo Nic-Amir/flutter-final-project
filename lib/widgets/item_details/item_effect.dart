@@ -8,27 +8,30 @@ class ItemEffect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.cyan,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(children: [
-          Text(
-            'Effect',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Card(
+        color: Colors.cyan,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(children: [
+            Text(
+              'Effect',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
+            SizedBox(
+              height: 10,
+            ),
 
-          Text(itemModel.effectEntries.first.effect)
+            Text(itemModel.effectEntries.first.effect)
 
-        ]),
+          ]),
+        ),
       ),
     );
   }
