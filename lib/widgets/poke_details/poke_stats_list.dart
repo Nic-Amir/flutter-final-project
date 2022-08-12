@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_project_pokemon_codex/models/pokemon_model.dart';
 
 class StatsList extends StatefulWidget {
