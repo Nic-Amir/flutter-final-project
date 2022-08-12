@@ -14,7 +14,7 @@ Some of the ScreenShots
 
 <img src="https://github.com/Nic-Amir/flutter-final-project/blob/master/screenshot%20of%20apps/item-details.png?raw=true" height="400"/>
 
-https://github.com/Vern404/flutter-final-project/blob/master/video/Pokedex.mp4?raw=true
+https://github.com/Nic-Amir/flutter-final-project/blob/master/video/Pokedex.mp4?raw=true
 
 ## Getting Started
 
