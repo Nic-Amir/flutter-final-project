@@ -2,6 +2,11 @@
 
 A new Flutter project.
 
+Some of the ScreenShots
+
+![alt text](https://github.com/Nic-Amir/flutter-final-project/blob/master/poke-detail.png?raw=true)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
