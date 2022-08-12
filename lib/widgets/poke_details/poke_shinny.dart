@@ -45,25 +45,47 @@ class PokeShinny extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(children: [
-          Text(
-            'Shinny Form',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-                color: Color.fromARGB(166, 0, 0, 0)),
-          ),
-          Row(
-            children: [
-              Container(
-                height: 100,
-                child: Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemonModel.id}.png',
-                scale: 4,),
-              )
-            ],
-          )
-        ]),
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(vertical:15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                Text(
+                  'Normal Form',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Color.fromARGB(166, 0, 0, 0)),
+                ),
+                Container(
+                  height: 100,
+                  child: Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonModel.id}.png',
+                    scale: 1,),
+                ),
+              ],
+            ),
+
+            Column(
+              children: [
+                Text(
+                  'Shiny Form',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Color.fromARGB(166, 0, 0, 0)),
+                ),
+                Container(
+                  height: 100,
+                  child: Image.network('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemonModel.id}.png',
+                  scale: 1,),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

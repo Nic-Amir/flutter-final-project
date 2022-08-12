@@ -83,7 +83,7 @@ class PokemonInformation extends StatelessWidget {
         StatsList(pokemonModel: pokemonModel),
         PokeShinny(pokemonModel: pokemonModel),
         Container(
-          height: 200,
+          height: 50,
         )
       ]),
     );
